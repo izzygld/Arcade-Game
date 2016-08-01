@@ -1,6 +1,11 @@
 **frontend-nanodegree-arcade-game**
 ===============================
 
+
+To play the game online Click [Here](https://izzygld.github.io/).
+
+
+
 Files:
 ======
 * Index contains the HTML code.
@@ -8,13 +13,13 @@ Files:
 images folder contains all the artwork for this game.
 * js folder contains:
    * app file : framework by Udacity and updated by me
-    * engine: given by Udacity 
+    * engine: given by Udacity
     * resources: given by Udacity
 
 
 Loading Game:
 =============
-To load the game go to the folder named "frontend-nanodegree-arcade-game." Open the folder and right click the index folder and choose to open with the Chrome web browser. Chrome will open and automatically start the game. The player starts at the bottom. 
+To load the game go to the folder named "frontend-nanodegree-arcade-game." Open the folder and right click the index folder and choose to open with the Chrome web browser. Chrome will open and automatically start the game. The player starts at the bottom.
 
 Game Controls:
 =========
