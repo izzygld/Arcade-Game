@@ -24,6 +24,16 @@ var livesRemaining = 10;
 var pointsScored = 0;
 
 
+//Class
+// var Human = function(x,y){
+// this.x = x;
+// this.y = y;
+
+// };
+
+// Human.prototype.Moves()
+
+
 // Enemies our player must avoid
 var Enemy = function() {
 
