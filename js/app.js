@@ -1,3 +1,8 @@
+
+//still would like to do:
+//fix subclass and constructors!
+//add things to catch
+//and reaction upon collision.
 /* Welcome! This is the third project for Udacity's Front-End Developer Nanodegree progrom.
 Create a frogger-style game using Object Oriented JavaScript and
 HTML5 Canvas.
