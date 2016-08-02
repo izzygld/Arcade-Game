@@ -39,6 +39,8 @@ var Enemy = function() {
 Enemy.prototype.collision = function() {
     player.x = 2;
     player.y = 4;
+
+    //------add flash message function in here()
     // lives decrease when they get hit by bug
     livesRemaining = livesRemaining - 1;
     lives.update(livesRemaining);
