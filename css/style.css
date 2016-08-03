@@ -3,9 +3,16 @@ body {
     background-color: lightblue;
 }
 
-h2 {
+h2:first-of-type{
 
     color: red;
+    float: left;
+    padding-right: 20px;
+}
+h2 {
+
+    color: black;
+    float: left;
 }
 
 

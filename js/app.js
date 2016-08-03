@@ -9,8 +9,15 @@ HTML5 Canvas.
 Students are provided with images and a game loop engine, and must build the game from there.*/
 // Constant variables
 // player location variables
+
+'use strict';
+
 var playerX = 200;
 var playerY = 400;
+
+//speed variables
+var minSpeed = 150;
+var maxSpeed = 500;
 
 // -Player Image
 var player_sprite = 'images/char-boy.png';
@@ -23,27 +30,42 @@ var height = [68, 151, 234];
 var livesRemaining = 10;
 var pointsScored = 0;
 
+//random number method
+var randInt = function (min, max) {
 
-//Class
-// var Human = function(x,y){
-// this.x = x;
-// this.y = y;
-
-// };
-
-// Human.prototype.Moves()
+    return Math.floor(Math.random() * (max-min)) + min;
+};
 
 
-// Enemies our player must avoid
-var Enemy = function() {
+//Human super class
+var Human = function(x, y, img) {
 
-    this.speed = Math.floor(Math.random() * 91 + 10);
+    this.x = x;
+    this.y = y;
+    this.sprite = img;
+};
+
+
+// Draw the objects on the screen, required method for game
+Human.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite),this.x,this.y);
+};
+
+
+//Enemy class
+var Enemy = function(x, y, speed) {
+    Human.call(this, x, y, 'images/enemy-bug.png');
+    this.speed = randInt(minSpeed,maxSpeed);
     this.x = -100;
     this.y = height[Math.floor(Math.random() * 3)];
 
-    // The image/sprite for our enemies
-    this.sprite = bug;
+
 };
+
+// Creates an Enemy object as a subclass of human
+Enemy.prototype = Object.create(Human.prototype);
+Enemy.prototype.constructor = Enemy;
+
 
 // Resets player position after getting hit by bug
 Enemy.prototype.collision = function() {
@@ -85,21 +107,23 @@ Enemy.prototype.update = function(dt) {
     }
 };
 
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
+
+
+
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-var Player = function() {
+var Player = function(x, y) {
+    Human.call(this, x, y, 'images/char-boy.png');
 
-    this.x = playerX;
-    this.y = playerY;
-    // The image/sprite for our player
-    this.sprite = player_sprite;
+
+     this.x = playerX;
+     this.y = playerY;
+
 };
+Player.prototype = Object.create(Human.prototype);
+Player.prototype.constructor = Player;
 
 
 //Resets player position when they reach
@@ -122,11 +146,6 @@ Player.prototype.success = function() {
 
 };
 
-Player.prototype.render = function() {
-
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-
-};
 
 //Moves player and keeps them from going of off the canvas
 Player.prototype.handleInput = function(keys) {
@@ -157,6 +176,8 @@ var Score = function() {
     this.doc.body.appendChild(this.scoreHeading);
     this.node = this.doc.createTextNode("Score: " + pointsScored);
     this.scoreHeading.appendChild(this.node);
+    $('h2').offset().left;
+
 };
 
 Score.prototype.update = function(pointsScored) {
