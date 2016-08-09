@@ -2,7 +2,7 @@
 ===============================
 
 
-To play the game online Click [Here](https://izzygld.github.io/).
+To play the game online Click [Here](https://izzygld.github.io/frogger-game/).
 
 
 
