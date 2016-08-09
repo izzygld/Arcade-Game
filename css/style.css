@@ -1,25 +1,33 @@
 body {
     box-sizing: border-box;
     width: 95%;
+    max-height: 90%;
     text-align: center;
     background-color: lightblue;
 }
 
+.demoClass {
+
+    text-align: center;
+    font-style:italic;
+    vertical-align:middle;
+    color:darkred;
+
+}
 .createdBy {
 
     font-family:fantasy;
 }
 
-h2:first-of-type{
+/*h2:first-of-type{
 
     color: red;
     float: left;
     padding-right: 20px;
-}
+}*/
 h2 {
 
     color: black;
-    float: left;
 }
 
 

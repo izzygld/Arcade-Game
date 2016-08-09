@@ -176,13 +176,17 @@ var Score = function() {
     this.doc.body.appendChild(this.scoreHeading);
     this.node = this.doc.createTextNode("Score: " + pointsScored);
     this.scoreHeading.appendChild(this.node);
-    $('h2').offset().left;
+    document.getElementsByTagName("h2")[0].setAttribute("class", "demoClass");
+
+    // $('h2').offset().left;
 
 };
 
 Score.prototype.update = function(pointsScored) {
     this.h2 = this.doc.getElementsByTagName('h2');
     this.h2[1].firstChild.nodeValue = "Score: " + pointsScored;
+    document.getElementsByTagName("h2")[0].setAttribute("class", "demoClass");
+
 };
 
 // Lives function
@@ -191,12 +195,19 @@ var Lives = function() {
     this.livesHeading = this.doc.createElement('h2');
     this.doc.body.appendChild(this.livesHeading);
     this.node = this.doc.createTextNode("Lives: " + livesRemaining);
+    //h2.setAttribute("style", "vertical-align:center; font-size:2em;");
     this.livesHeading.appendChild(this.node);
+    document.getElementsByTagName("h2")[0].setAttribute("class", "demoClass");
+
+
 };
 
 Lives.prototype.update = function(livesRemaining) {
     this.h2 = this.doc.getElementsByTagName('h2');
     this.h2[0].firstChild.nodeValue = "Lives: " + livesRemaining;
+    document.getElementsByTagName("h2")[0].setAttribute("class", "demoClass");
+
+
 };
 
 
